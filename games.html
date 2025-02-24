@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏库</title>
+    <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href="../styles/games.css">
+</head>
+<body background="../images/R-C.png">
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="games.html" class="active">游戏库</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="games-section">
+        <div class="games-container">
+            <div class="banner-slider">
+                <div class="banner">
+                    <div class="banner-item">
+                        <a href="index.html" class="banner-link">
+                            <img src="../images/game2.png" alt="崩坏:星穹铁道">
+                            <div class="banner-info">
+                                <h2>《崩坏：星穹铁道》</h2>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="banner-item">
+                        <a href="index.html" class="banner-link">
+                            <img src="../images/game3.png" alt="明日方舟">
+                            <div class="banner-info">
+                                <h2>《明日方舟》</h2>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="banner-item">
+                        <a href="https://ys.mihoyo.com/?utm_source=backup307&from_channel=backup307#/" class="banner-link">
+                            <img src="../images/game1.png" alt="原神">
+                            <div class="banner-info">
+                                <h2>《原神》</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="banner-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="banner-nav prev">❮</button>
+                <button class="banner-nav next">❯</button>
+            </div>
+
+            <div class="news-grid">
+                <a href="index.html" class="news-card">
+                    <div class="news-image">
+                        <img src="../images/games2.png" alt="崩坏:星穹铁道">
+                    </div>
+                    <div class="news-info">
+                        <div class="news-tag">崩坏:星穹铁道</div>
+                    </div>
+                </a>
+                <a href="index.html" class="news-card">
+                    <div class="news-image">
+                        <img src="../images/games3.png" alt="明日方舟">
+                    </div>
+                    <div class="news-info">
+                        <div class="news-tag">明日方舟</div>
+                    </div>
+                </a>
+                <a href="https://ys.mihoyo.com/" class="news-card">
+                    <div class="news-image">
+                        <img src="../images/games1.png" alt="原神">
+                    </div>
+                    <div class="news-info">
+                        <div class="news-tag">原神</div>
+                    </div>
+                </a>
+                <a href="https://zzz.mihoyo.com/main/" class="news-card">
+                    <div class="news-image">
+                        <img src="../images/games4.png" alt="绝区零">
+                    </div>
+                    <div class="news-info">
+                        <div class="news-tag">绝区零</div>
+                    </div>
+                </a>
+                <a href="https://mc.kurogames.com/main" class="news-card">
+                    <div class="news-image">
+                        <img src="../images/games5.png" alt="鸣潮">
+                    </div>
+                    <div class="news-info">
+                        <div class="news-tag">鸣潮</div>
+                    </div>
+                </a>
+                <a href="https://ht.wanmei.com/main.html" class="news-card">
+                    <div class="news-image">
+                        <img src="../images/games7.png" alt="幻塔">
+                    </div>
+                    <div class="news-info">
+                        <div class="news-tag">幻塔</div>
+                    </div>
+                </a>
+                <a href="https://hyrz.qq.com/main.shtml" class="news-card">
+                    <div class="news-image">
+                        <img src="../images/games6.png" alt="火影忍者手游">
+                    </div>
+                    <div class="news-info">
+                        <div class="news-tag">火影忍者手游</div>
+                    </div>
+                </a>
+                <a href="https://id5.163.com/index.html" class="news-card">
+                    <div class="news-image">
+                        <img src="../images/games8.png" alt="第五人格">
+                    </div>
+                    <div class="news-info">
+                        <div class="news-tag">第五人格</div>
+                    </div>
+                </a>
+                <a href="https://bh3.mihoyo.com/main" class="news-card">
+                    <div class="news-image">
+                        <img src="../images/games9.png" alt="崩坏三">
+                    </div>
+                    <div class="news-info">
+                        <div class="news-tag">崩坏三</div>
+                    </div>
+                </a>
+                <a href="https://pvp.qq.com/" class="news-card">
+                    <div class="news-image">
+                        <img src="../images/games10.png" alt="王者荣耀">
+                    </div>
+                    <div class="news-info">
+                        <div class="news-tag">王者荣耀</div>
+                    </div>
+                </a>
+            </div>
+
+            <a href="https://m.taptap.cn/games/二次元-131420781152" class="view-more">
+                查看更多
+                <span class="arrow">→</span>
+            </a>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const banner = document.querySelector('.banner');
+            const bannerItems = document.querySelectorAll('.banner-item');
+            const dots = document.querySelectorAll('.banner-dots .dot');
+            const prevBtn = document.querySelector('.banner-nav.prev');
+            const nextBtn = document.querySelector('.banner-nav.next');
+            let currentSlide = 0;
+            const slideCount = bannerItems.length;
+
+            function updateSlider(withTransition = true) {
+                if (withTransition) {
+                    banner.classList.add('with-transition');
+                    bannerItems.forEach(item => item.classList.add('fade'));
+                } else {
+                    banner.classList.remove('with-transition');
+                    bannerItems.forEach(item => item.classList.remove('fade'));
+                }
+                
+                banner.style.transform = `translateX(-${currentSlide * 100}%)`;
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+
+                setTimeout(() => {
+                    bannerItems.forEach(item => item.classList.remove('fade'));
+                }, 400);
+            }
+
+            function nextSlide() {
+                if (currentSlide === slideCount - 1) {
+                    currentSlide = 0;
+                    updateSlider(true);
+                } else {
+                    currentSlide++;
+                    updateSlider(true);
+                }
+            }
+
+            function prevSlide() {
+                if (currentSlide === 0) {
+                    currentSlide = slideCount - 1;
+                    updateSlider(true);
+                } else {
+                    currentSlide--;
+                    updateSlider(true);
+                }
+            }
+
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentSlide = index;
+                    updateSlider(true);
+                });
+            });
+
+            updateSlider(false);
+        });
+    </script>
+</body>
+</html>
